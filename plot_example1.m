@@ -28,7 +28,7 @@ end
 set(gca,'box','on');
 title('Density');
 if savefigs
-	print('-djpeg', 'example1_mu.jpg', '-r300');
+	print('-djpeg', 'figures/example1_mu.jpg', '-r300');
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,19 +47,19 @@ end
 set(gca,'box','on');
 title('Samples');
 if savefigs
-	print('-djpeg', 'example1_samples.jpg', '-r300');
+	print('-djpeg', 'figures/example1_samples.jpg', '-r300');
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Plot the diffeo warp
 %%%%%%%%%%%%%%%%%%%%%%%%
 figure()
-plot_diffeo(phi);
+plot_diffeo(phi, 4);
 if showticks == false
     set(gca, 'XTick', []);
     set(gca, 'YTick', []);
 end
 title('Warp');
 if savefigs
-	print('-djpeg', 'example1_phi.jpg', '-r300');
+	print('-djpeg', 'figures/example1_phi.jpg', '-r300');
 end

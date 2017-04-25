@@ -6,12 +6,9 @@ function g = compose_function(f,phi)
     dims = size(phi);
     switch dims(1)
         case 2
-            phix = squeeze(phi(1,:,:));
-            phiy = squeeze(phi(2,:,:));
-
             % move points outside the domain using periodic bc
-            phix = mod(phix-1,dims(2))+1;
-            phiy = mod(phiy-1,dims(3))+1;
+            phix = mod(squeeze(phi(1,:,:))-1,dims(2))+1;
+            phiy = mod(squeeze(phi(2,:,:))-1,dims(3))+1;
 
             % extend im periodically
             imext = [f f(:,1);f(1,:) f(1,1)];

@@ -10,11 +10,18 @@ Download all the `MATLAB` source files (`*.m`) and add the corresponding folder 
 
 ## Example usage
 Here is a brief description of how to use the code.
-Assume that the density of the desired nonuniform probability distribution is available as, for example, a `256*256` matrix `mu` in `MATLAB`.
-We assume that the density is periodic is both directions and we think of the domain as being `[1,257)x[1,257)`.
-For example, and `imagesc` plot of `mu` might be as in the figure below.
 
-<img src="https://github.com/kmodin/oit-random/blob/master/figures/example1_mu.jpg" alt="Figure of mu" width="50%"/>
+Assume that the density of the desired nonuniform probability distribution is available as an array `mu` in `MATLAB`.
+As an example, the function `funnydist` can be used to obtain a nonuniform distribution as follows:
+```matlab
+dim = 256;
+[X,Y] = meshgrid(linspace(-pi,pi,dim),linspace(-pi,pi,dim));
+mu = funnydist(X,Y);
+```
+We assume that the density is periodic is both directions and we think of the domain as being `[1,257)x[1,257)`.
+Here is a plot of `mu` using the plot command `imagesc`:
+
+<img src="https://github.com/kmodin/oit-random/blob/master/figures/example1_mu.jpg" alt="Figure of mu" width="65%"/>
 
 The first step is to generate a diffeomorphism `phi` that matches the uniform density with `mu`. 
 This is accomplished by the function `oit` as follows
@@ -31,7 +38,7 @@ plot_diffeo(phi,4);
 She second argument to `plot_diffeo` specifies the downsample, so the only every 4th mesh-line of the warp is shown.
 The result looks like in the figure below.
 
-<img src="https://github.com/kmodin/oit-random/blob/master/figures/example1_phi.jpg" alt="Figure of mu" width="50%"/>
+<img src="https://github.com/kmodin/oit-random/blob/master/figures/example1_phi.jpg" alt="Figure of mu" width="60%"/>
 
 Next, we draw `10^5` samples from the probability distribution corresponding to `mu` by the following command:
 ```matlab
@@ -42,14 +49,14 @@ We may now plot the samples using the `scatter` command in `MATLAB`
 ```matlab
 scatter(s(2,:),s(1,:),2,'filled', 'MarkerFaceColor','k',...
        'MarkerFaceAlpha',0.1,'MarkerEdgeAlpha',0);
-axis([1 257 1 257]);
+axis([1 dim+1 1 dim+1]);
 set(gca,'dataAspectRatio',[1 1 1]);
 set(gca,'Ydir','reverse')
 ```
 Notice here that we need to flip the y-axis in order to conform with the standard of `imagesc`.
 The resulting figure looks as follows
 
-<img src="https://github.com/kmodin/oit-random/blob/master/figures/example1_samples.jpg" alt="Figure of mu" width="50%"/>
+<img src="https://github.com/kmodin/oit-random/blob/master/figures/example1_samples.jpg" alt="Figure of mu" width="60%"/>
 
 To generate more samples is very fast. 
 For example, another ten million samples is generated in less than a second on a standard laptop.
@@ -59,4 +66,4 @@ s = generate_samples(phi, 10^7);
 toc
 ```
 
-The example discussed here is available in full by the script files `run_example1.m` and `plot_example1.m`.
+The example discussed here is available in full by the script files `run_example1.m` and `plot_example1.m` as part of the repository.

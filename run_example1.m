@@ -7,12 +7,8 @@
 % Generate target density
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 dim = 256;
-compressratio = 100;
 [X,Y] = meshgrid(linspace(-pi,pi,dim),linspace(-pi,pi,dim));
 mu = funnydist(X,Y);
-mu = mu - min(min(mu));
-mu = mu/max(max(mu));
-mu = 1 + (compressratio-1)*mu;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Compute OIT diffeomorphism

@@ -12,7 +12,7 @@ Download all the `MATLAB` source files (`*.m`) and add the corresponding folder 
 Here is a brief description of how to use the code.
 
 Assume that the density of the desired nonuniform probability distribution is available as an array `mu` in `MATLAB`.
-As an example, the function `funnydist` can be used to obtain a nonuniform distribution as follows:
+As an example, the function `funnydist` can be used to obtain a nonuniform 2D distribution as follows:
 ```matlab
 dim = 256;
 [X,Y] = meshgrid(linspace(-pi,pi,dim),linspace(-pi,pi,dim));

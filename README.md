@@ -1,9 +1,9 @@
 # Random sampling by optimal information transport
 
 This is a `MATLAB` which uses the framework of [optimal information transport](http://dx.doi.org/10.1007/s12220-014-9469-2) to generate random samples from nonuniform, smooth probability distributions on a Riemannian manifold.
-The basic method is to solve a density matching problem by an algorithm developed in [this paper](http://dx.doi.org/10.1137/151006238), thereby matching a uniform density from which samples can be drawn with the desired nonuniform density.
+The basic method is to solve a density matching problem by an algorithm developed in [this paper](http://dx.doi.org/10.1137/151006238), thereby matching a uniform density, from which samples can be drawn, with the desired nonuniform density.
 The computed diffeomorphism is then used to transform from the uniform to the nonuniform samples.
-More details of the algorithm is available in [this paper](http://dx.doi.org/10.1137/151006238).
+The mathematical background and a full description of the the algorithm is available in [this arXiv preprint](https://arxiv.org/abs/1704.07897).
 
 ## Installing
 Download all the `MATLAB` source files (`*.m`) and add the corresponding folder to the `MATLAB` search path. 

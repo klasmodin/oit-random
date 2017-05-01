@@ -1,8 +1,8 @@
 # Random sampling by optimal information transport
 
-This is a `MATLAB` which uses the framework of [optimal information transport](http://dx.doi.org/10.1007/s12220-014-9469-2) to generate random samples from nonuniform, smooth probability distributions on a Riemannian manifold.
+This is a `MATLAB` code which uses the framework of [optimal information transport](http://dx.doi.org/10.1007/s12220-014-9469-2) to generate random samples from nonuniform, smooth probability distributions.
 The basic method is to solve a density matching problem by an algorithm developed in [this paper](http://dx.doi.org/10.1137/151006238), thereby matching a uniform density, from which samples can be drawn, with the desired nonuniform density.
-The computed diffeomorphism is then used to transform from the uniform to the nonuniform samples.
+The computed diffeomorphism is then used to transform the samples from the uniform to the nonuniform distribution.
 The mathematical background and a full description of the the algorithm is available in [this arXiv preprint](https://arxiv.org/abs/1704.07897).
 
 ## Installing
@@ -35,7 +35,7 @@ The computed warp can be displayed by
 ```matlab
 plot_diffeo(phi,4);
 ```
-She second argument to `plot_diffeo` specifies the downsample, so the only every 4th mesh-line of the warp is shown.
+She second argument to `plot_diffeo` specifies the downsample, so that only every 4th mesh-line of the warp is shown.
 The result looks like in the figure below.
 
 <img src="https://github.com/kmodin/oit-random/blob/master/figures/example1_phi.jpg" alt="Figure of mu" width="60%"/>
@@ -66,4 +66,4 @@ s = generate_samples(phi, 10^7);
 toc
 ```
 
-The example discussed here is available in full by the script files `run_example1.m` and `plot_example1.m` as part of the repository.
+The example discussed here is available in the script files `run_example1.m` and `plot_example1.m` (part of the repository).

@@ -36,7 +36,7 @@ end
 % Plot the generated samples
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure()
-scatter(s(1,:),s(2,:),2,'filled', 'MarkerFaceColor','k',...
+scatter(s(:,1),s(:,2),2,'filled', 'MarkerFaceColor','k',...
        'MarkerFaceAlpha',0.1,'MarkerEdgeAlpha',0);
 axis([1 dims(1)+1 1 dims(2)+1]);
 set(gca,'dataAspectRatio',[1 1 1]);

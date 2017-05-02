@@ -7,9 +7,10 @@ function id = identity_diffeo(dims)
         case 1
             id = ndgrid(1:dims(1));
         case 2
+            id = zeros(dims(1),dims(2),2);
             [X1,X2] = ndgrid(1:dims(1),1:dims(2));
-            id(1,:,:) = X1;
-            id(2,:,:) = X2;
+            id(:,:,1) = X1;
+            id(:,:,2) = X2;
         otherwise
             error('dimension not supported!');
     end

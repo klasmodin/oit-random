@@ -16,7 +16,7 @@ function g = compose_function(f,phi)
             % call interpolation routine
 %             F = griddedInterpolant(imext);
 %             g = F(phiy, phix); % Should be faster, but doesn't work
-            g = interp2(imext, phiy, phix, 'linear');
+            g = interpn(imext, phix, phiy, 'linear');
             
         case 3
             error('Only 2D diffeos implemented.');

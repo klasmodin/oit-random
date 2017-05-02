@@ -13,8 +13,8 @@ function s = eval_diffeo(phi, s0)
             
             % warp samples
             s = zeros(2,size(s0,2));
-            s(1,:) = interp2(squeeze(phiext(1,:,:)),s0(1,:),s0(2,:),'linear',NaN);
-            s(2,:) = interp2(squeeze(phiext(2,:,:)),s0(1,:),s0(2,:),'linear',NaN);
+            s(1,:) = interpn(squeeze(phiext(1,:,:)),s0(1,:),s0(2,:),'linear',NaN);
+            s(2,:) = interpn(squeeze(phiext(2,:,:)),s0(1,:),s0(2,:),'linear',NaN);
             
         case 3
             error('Only 2D diffeos implemented.');

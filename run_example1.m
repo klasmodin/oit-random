@@ -7,7 +7,7 @@
 % Generate target density
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 dim = 256;
-[X,Y] = meshgrid(linspace(-pi,pi,dim),linspace(-pi,pi,dim));
+[X,Y] = ndgrid(linspace(-pi,pi,dim),linspace(-pi,pi,dim));
 mu = funnydist(X,Y);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

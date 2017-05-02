@@ -13,10 +13,10 @@ showcontours = true;
 %%%%%%%%%%%%%%%%%%%%%%%
 figure()
 lims = [min(mu(:)) max(mu(:))];
-imagesc(mu,lims);
+imagesc(mu',lims);
 if showcontours
     hold on
-    contour(mu,10,'LineColor',[1 1 1]);
+    contour(mu',10,'LineColor',[1 1 1]);
     hold off
 end
 set(gca,'dataAspectRatio',[1 1 1]);
@@ -35,7 +35,7 @@ end
 % Plot the generated samples
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure()
-scatter(s(2,:),s(1,:),2,'filled', 'MarkerFaceColor','k',...
+scatter(s(1,:),s(2,:),2,'filled', 'MarkerFaceColor','k',...
        'MarkerFaceAlpha',0.1,'MarkerEdgeAlpha',0);
 axis([1 dim+1 1 dim+1]);
 set(gca,'dataAspectRatio',[1 1 1]);

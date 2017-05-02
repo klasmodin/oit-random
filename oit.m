@@ -11,7 +11,6 @@ function [phi, phiinv] = oit(mu, timesteps)
     % Compute dimensions
     dims = size(mu);
     assert(length(dims)==2, 'Only 2D densities implemented.');
-    assert(norm(diff(dims))==0, 'Only square densities implemented.');
     
     % Compute total volume
     vol = sum(mu(:));

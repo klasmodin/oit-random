@@ -7,6 +7,7 @@ close all
 savefigs = false;
 showticks = true;
 showcontours = true;
+dims = size(mu);
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Plot the density mu
@@ -37,7 +38,7 @@ end
 figure()
 scatter(s(1,:),s(2,:),2,'filled', 'MarkerFaceColor','k',...
        'MarkerFaceAlpha',0.1,'MarkerEdgeAlpha',0);
-axis([1 dim+1 1 dim+1]);
+axis([1 dims(1)+1 1 dims(2)+1]);
 set(gca,'dataAspectRatio',[1 1 1]);
 set(gca,'Ydir','reverse')
 if showticks == false

@@ -15,7 +15,7 @@ Assume that the density of the desired nonuniform probability distribution is av
 As an example, the function `funnydist` can be used to obtain a nonuniform 2D distribution as follows:
 ```matlab
 dim = 256;
-[X,Y] = meshgrid(linspace(-pi,pi,dim),linspace(-pi,pi,dim));
+[X,Y] = ndgrid(linspace(-pi,pi,dim),linspace(-pi,pi,dim));
 mu = funnydist(X,Y);
 ```
 We assume that the density is periodic is both directions and we think of the domain as being `[1,257)x[1,257)`.
